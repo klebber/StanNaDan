@@ -3,6 +3,7 @@ body {
 }
 .page-content{
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .btn-primary {
@@ -20,11 +21,27 @@ body {
   background-color: #767c82;
 }
 
+.login-form {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
 .register-form {
+  padding-top: 20px;
   border-left: 1px dashed #333;
 }
 
-.btn-primary:focus, .form-control:focus {
+.login-form .btn-primary,
+.register-form .btn-primary {
+  min-width: 150px;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary:focus {
   box-shadow: 0 0 0 .15rem #767c82 !important;
 }
 
@@ -40,4 +57,22 @@ body {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+#footer.stikybottom {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right:0;
+}
+
+.alert {
+  margin-top: 1rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .register-form {
+    border-left: none;
+    border-top: 1px dashed #333;
+  }
 }
