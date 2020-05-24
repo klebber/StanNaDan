@@ -1,5 +1,5 @@
 <?php 
-require("init.php");
+require 'init.php';
 $_SESSION['status'] = false;
 $_SESSION['id'] = -1;
 $_SESSION['username'] = "";

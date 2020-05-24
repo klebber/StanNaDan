@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("init.php"); ?>
+<?php include 'init.php'; ?>
 <head>
 
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
 
 <body>
 
-  <?php include('header.php'); ?>
+  <?php include 'header.php'; ?>
 
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

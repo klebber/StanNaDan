@@ -16,7 +16,7 @@
 
 <body>
 
-    <?php include('header.php'); ?>
+    <?php include 'header.php'; ?>
 
     <div class="container page-content">
         <h1>Error!</h1>

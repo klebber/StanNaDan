@@ -1,8 +1,8 @@
-<?php require("init.php"); ?>
+<?php require 'init.php'; ?>
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Stan Na Dan</a>
+    <a class="navbar-brand" href="index.php"><strong>Stan Na Dan</strong></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

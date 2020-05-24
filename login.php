@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require("init.php");
+<?php require 'init.php';
 if ($_SESSION['status'] == true) {
     header("Location: error.php");
 } ?>
@@ -11,7 +11,7 @@ if ($_SESSION['status'] == true) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Stan Na Dan - Platforma za izdavanje stanova na dan</title>
+  <title>Login - Stan Na Dan</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@ if ($_SESSION['status'] == true) {
 
 <body>
 
-    <?php include('header.php'); ?>
+    <?php include 'header.php'; ?>
 
     <div class="container page-content">
         <div class="row">

@@ -70,6 +70,56 @@ body {
   margin-top: 1rem !important;
 }
 
+.btn-danger {
+  border-radius: 24px;
+}
+
+.search {
+  margin-bottom: 1rem;
+	border-radius: 24px;
+}
+
+#searchquery {
+	border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  box-shadow: none !important;
+}
+
+.suggest-list {
+  border-radius: 24px;
+  border: 1px solid #dfe1e5;
+  margin-bottom: 0px;
+}
+
+#suggest {
+  background-color: #fff;
+  border-radius: 24px;
+  position: absolute !important;
+  z-index: 100;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.suggest-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.suggest-item {
+  padding-left: 20px;
+  border-radius: 24px;
+}
+
+.suggest-item:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.portfolio-item {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 @media (max-width: 767.98px) {
   .register-form {
     border-left: none;

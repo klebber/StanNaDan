@@ -1,6 +1,6 @@
 <?php 
-require("init.php");
-require("dbConnection.php");
+require 'init.php';
+require 'dbConnection.php';
 
 if(isset($_POST['email']) && isset($_POST['lozinka']))
 {
