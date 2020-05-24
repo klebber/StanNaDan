@@ -32,9 +32,9 @@ if ($rezultat->num_rows == 0) {
     while ($red = $rezultat->fetch_object()) { ?>
         <div class="col-lg-6 col-sm-12 portfolio-item">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/362x200" alt="">
+                <a href="stan.php?id=<?=$red->id?>"><img class="card-img-top stanovi-card-img" src="img/stanovi/<?=$red->id?>.jpg" alt=""></a>
                 <div class="card-body">
-                    <h5 class="card-title"><?=$red->naziv?></h5>
+                    <a href="stan.php?id=<?=$red->id?>"><h5 class="card-title"><?=$red->naziv?></h5></a>
                     <p class="card-text"><?=$red->opis?></p>
                     <p class="card-text"><small class="text-muted">Tip stana: <?=$red->tip?></small></p>
                 </div>

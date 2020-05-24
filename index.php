@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Stan Na Dan - Platforma za izdavanje stanova na dan</title>
+  <title>Stan na Dan - Platforma za izdavanje stanova na dan</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -30,20 +30,20 @@
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" style="background-image: url('img/1.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
+            <h3>ZEN APARTMAN, DORĆOL</h3>
+            <p>ZEN je studio apartman, čiji enterijer nikog ne ostavlja ravnodušnim.</p>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('img/2.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
+            <h3>GLAM, 1-SOBNI STAN, NOVI BEOGRAD</h3>
+            <p>Jedan od luksuzno opremljenih apartmana iz naše ponude je Apartman Glam.</p>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('img/3.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
+            <h3>TRITON, 2-SOBNI APARTMAN BEOGRAD</h3>
+            <p>Lokacija apartmana TRITON je poslednjih godina izuzetno atraktivna – on je pravi pravcati dvosoban stan na dan na Čuburi sa garažom.</p>
           </div>
         </div>
       </div>
@@ -60,24 +60,17 @@
 
   <div class="container">
 
-    <h1 class="my-4">Welcome to Modern Business</h1>
+    <h1 class="my-4">Stan na dan - Beograd</h1>
 
     <div class="row">
       <div class="col-lg-6">
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+        <p>Idealno rešenje ukoliko ne biste da potrošite previše novca na stan u Beogradu za samo jedan dan.</p>
+        <p>Ništa ne brinite jer će vas ponuda Stan na Dan Beograd koštati manje nego što možete i da zamislite.</p>
+        <p>Sve što je potrebno jeste tri minuta potrošenog vremena kako biste pronašli odgovarajući stan na našem portalu.</p>
+        <p>Iako deluje neverovatno, stan na dan zaista je moguće iznajmiti tako brzo, u svega par koraka.</p>
       </div>
       <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+        <img class="img-fluid rounded" src="http://placehold.it/700x350" alt="">
       </div>
     </div>
 
@@ -85,10 +78,10 @@
 
     <div class="row mb-4">
       <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+        <p>Ukoliko želite da pregledate našu ponudu stanova, to možete uraditi klikom na dugme.</p>
       </div>
       <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Ponuda Stanova <span class="iconify" data-icon="oi-arrow-right" data-inline="false"></span></a>
+        <a class="btn btn-lg btn-secondary btn-block" href="stanovi.php">Ponuda Stanova <span class="iconify" data-icon="oi-arrow-right" data-inline="false"></span></a>
       </div>
     </div>
 

@@ -20,16 +20,14 @@
     <?php include 'header.php'; ?>
 
     <div class="container page-content">
-
-
-        
-
         <div class="row">
             <div class="col-lg-3 mb-4">
                 <div class="list-group">
-                    <a href="javascript:void(0);" onclick="insertParam('tip','jeftini')" class="list-group-item <?php if($_GET['tip'] == 'jeftini') echo 'active' ?>">Jeftini</a>
-                    <a href="javascript:void(0);" onclick="insertParam('tip','standardni')" class="list-group-item <?php if($_GET['tip'] == 'standardni') echo 'active' ?>">Standardni</a>
-                    <a href="javascript:void(0);" onclick="insertParam('tip','luksuzni')" class="list-group-item <?php if($_GET['tip'] == 'luksuzni') echo 'active' ?>">Luksuzni</a>
+                    <a href="javascript:void(0);" onclick="insertParam('tip','apartman')" class="list-group-item <?php if($_GET['tip'] == 'apartman') echo 'active' ?>">Apartman</a>
+                    <a href="javascript:void(0);" onclick="insertParam('tip','jednosobni')" class="list-group-item <?php if($_GET['tip'] == 'jednosobni') echo 'active' ?>">Jednosobni stan</a>
+                    <a href="javascript:void(0);" onclick="insertParam('tip','dvosobni')" class="list-group-item <?php if($_GET['tip'] == 'dvosobni') echo 'active' ?>">Dvosobni stan</a>
+                    <a href="javascript:void(0);" onclick="insertParam('tip','trosobni')" class="list-group-item <?php if($_GET['tip'] == 'trosobni') echo 'active' ?>">Trosobni stan</a>
+                    <a href="javascript:void(0);" onclick="insertParam('tip','penthouse')" class="list-group-item <?php if($_GET['tip'] == 'penthouse') echo 'active' ?>">Penthouse</a>
                     <?php if(isset($_GET["tip"])) { ?>
                         <a href="javascript:void(0);" onclick="removeParam('tip')" class="list-group-item" style="color:red">Poništi Filter</a>
                     <?php } ?>

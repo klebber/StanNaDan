@@ -6,7 +6,7 @@ if (!isset($_GET['query'])) {
     include 'dbConnection.php';
     $pomocna = $mysqli->real_escape_string(trim($_GET["query"]));
     
-    $upit = "SELECT id, naziv FROM adresa WHERE naziv LIKE '$pomocna%' ORDER BY naziv";
+    $upit = "SELECT id, naziv FROM adresa WHERE LOWER(naziv) LIKE LOWER('$pomocna%') ORDER BY naziv";
 
     $rezultat = $mysqli->query($upit);
 
