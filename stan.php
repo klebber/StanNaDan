@@ -46,25 +46,30 @@
             </div>
 
             <div class="col-md-4">
-
-                <div class="card mb-4">
-                    <h5 class="card-header">Trenutne informacije</h5>
-                    <div class="card-body">
-                    <div id="informacije"></div>
+                <div id="infoCard">
+                    <div class="card mb-4">
+                        <h5 class="card-header">Trenutne informacije</h5>
+                        <div class="card-body">
+                        <div id="informacije"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card my-4" style="display: none">
-                    <h5 class="card-header">Dostupnost</h5>
-                    <div class="card-body">
-                    
+                <div id="dostupnostCard">
+                    <div class="card my-4">
+                        <h5 class="card-header">Dostupnost</h5>
+                        <div class="card-body">
+                            <div id="calendar"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card my-4" style="display: none">
-                    <h5 class="card-header">Rezevacija</h5>
-                    <div class="card-body">
-                    
+                <div id="rezervacijaCard" style="display: none">
+                    <div class="card my-4">
+                        <h5 class="card-header">Rezevacija</h5>
+                        <div class="card-body">
+                        
+                        </div>
                     </div>
                 </div>
 
@@ -73,8 +78,11 @@
         </div>
 
     <script src="vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/stan.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
 </body>
 

@@ -130,6 +130,19 @@ body {
   height: 250px;
 }
 
+.datepicker-inline {
+  margin: 0 auto;
+}
+
+.rezervacijabtn {
+  text-align: center;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: lightgray !important;
+  border-color: lightgray !important;
+}
+
 @media (max-width: 767.98px) {
   .register-form {
     border-left: none;
