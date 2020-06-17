@@ -18,7 +18,7 @@ function ucitajPodatkeOStanu() {
             $("#naziv").html(obj.naziv);
             $("#opis").html(obj.opis);
             $("#opis").html(obj.opis);
-            $("#lokacija").html("Ulica: " + obj.ulica + "<br/>Broj: " + obj.broj + "<br/>Tip: " + obj.tip);
+            $("#lokacija").html("Ulica: " + obj.ulica + "<br/>Broj: " + obj.broj + "<br/>Tip: " + obj.tip + "<br/>Cena: " + obj.cena + " €/dan");
             $("#slika").attr("src", "img/stanovi/"+obj.id+".jpg");
         }
     );
@@ -51,23 +51,47 @@ function disableDates() {
                 window.location.href="error.php";
                 return;
             }
-            console.log(data);
             var obj = JSON.parse(data);
-            console.log(obj);
             var datumi = [];
             for (var i = 0, len = obj.length; i < len; ++i) {
                 var rez = obj[i];
                 datumi.push(rez[3]);
             }
-            console.log(datumi);
             $('#calendar').datepicker({
                 weekStart: 1,
                 startDate: new Date(),
                 todayHighlight: true,
                 format: 'yyyy-mm-dd',
                 datesDisabled: datumi
+            }).on('changeDate', function(e) {
+                if ($("#rezervacijaCard").css('display') != 'none') {
+                    var date = $("#calendar").datepicker("getDate");
+                    var yyyy = date.getFullYear().toString();
+                    var mm = (date.getMonth()+1).toString();
+                    var dd  = date.getDate().toString();
+                    $("#datumvalue").html("Izabrani datum: " + dd + "." + mm + "." + yyyy);
+                    $("#rezervacijabtn").prop('disabled', false);
+                }
             });
         }
     );
 }
 
+$(document).ready(function() {
+    $("#rezervacijabtn").click(function(){
+        $.post(
+            "obradiRezervaciju.php", {
+                operacija: "dodavanje",
+                stan: findGetParameter('id'),
+                datum: $("#calendar").datepicker("getFormattedDate")
+            },
+            function(data) {
+                if(data == "error") {
+                    alert('Došlo je do greške prilikom rezervacije.');
+                } else if(data == "success") {
+                    window.location = "rezervacije.php";
+                }
+            }
+        );
+    });
+});

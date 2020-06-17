@@ -4,18 +4,22 @@ include 'init.php';
 include 'dbConnection.php';
 
 $where = "";
-$stan = $_GET['stan'];
-$korisnik = $_GET['korisnik'];
-if(isset($_GET['stan'])) $where = "WHERE stan = $stan";
-else if(isset($_GET['korisnik'])) $where = "WHERE korisnik = $korisnik";
 
-$upit = "SELECT id, korisnik, stan, datum FROM rezervacija $where";
+if(isset($_GET['stan'])) {
+    $stan = $_GET['stan'];
+    $where = "WHERE stan = $stan";
+}
+else {
+    $korisnik = $_SESSION['id'];
+    $where = "WHERE korisnik = $korisnik";
+}    
+
+$upit = "SELECT r.id as id, r.korisnik as korisnik, r.stan as stan, r.datum as datum, s.naziv as naziv, s.cena as cena FROM rezervacija r join stan s on r.stan = s.id $where";
 
 $rezultat = $mysqli->query($upit);
-if ($rezultat->num_rows == 0) {
+if ($rezultat == false) {
     echo 'error';
     return;
 }
-$stan = $rezultat->fetch_all();
-echo json_encode($stan);
+echo json_encode($rezultat->fetch_all());
 ?>

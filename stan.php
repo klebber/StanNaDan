@@ -64,11 +64,12 @@
                     </div>
                 </div>
 
-                <div id="rezervacijaCard" style="display: none">
+                <div id="rezervacijaCard" <?php if($_SESSION['role'] != 'korisnik') { ?>style="display: none"<?php } ?>>
                     <div class="card my-4">
                         <h5 class="card-header">Rezevacija</h5>
                         <div class="card-body">
-                        
+                            <p id="datumvalue">Izaberite datum u kalendaru.</p>
+                            <button id="rezervacijabtn" class="btn btn-primary" disabled>Rezerviši</button>
                         </div>
                     </div>
                 </div>

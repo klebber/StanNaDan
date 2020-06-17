@@ -5,7 +5,7 @@ include 'dbConnection.php';
 
 $id = $_GET['id'];
 
-$upit = "SELECT s.id as id, s.naziv as naziv, s.opis as opis, a.naziv as ulica, s.broj as broj, s.tip as tip FROM stan s JOIN adresa a on (s.ulica = a.id) WHERE s.id = $id";
+$upit = "SELECT s.id as id, s.naziv as naziv, s.opis as opis, a.naziv as ulica, s.broj as broj, s.tip as tip, s.cena as cena FROM stan s JOIN adresa a on (s.ulica = a.id) WHERE s.id = $id";
 $rezultat = $mysqli->query($upit);
 if ($rezultat->num_rows != 1) {
     echo 'error';

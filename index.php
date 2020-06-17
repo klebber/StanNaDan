@@ -70,7 +70,7 @@
         <p>Iako deluje neverovatno, stan na dan zaista je moguće iznajmiti tako brzo, u svega par koraka.</p>
       </div>
       <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x350" alt="">
+        <img class="img-fluid rounded" src="img/kljuc.jpg" alt="">
       </div>
     </div>
 
