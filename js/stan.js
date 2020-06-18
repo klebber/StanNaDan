@@ -5,9 +5,11 @@ function findGetParameter(parameterName) {
 }
 
 function ucitajPodatkeOStanu() {
+    var stan = findGetParameter('id');
+    $("#commentText").val("");
     $.get(
         "ucitajStan.php", {
-            id: findGetParameter('id')
+            id: stan
         },
         function(data) {
             if(data == "error") {
@@ -22,13 +24,14 @@ function ucitajPodatkeOStanu() {
             $("#slika").attr("src", "img/stanovi/"+obj.id+".jpg");
         }
     );
-    getCurrentData();
-    disableDates();
+    getCurrentData(stan);
+    disableDates(stan);
+    ucitajKomentare(stan);
 }
 
-function getCurrentData() {
+function getCurrentData(stan) {
     var data = "{\"temp\": \"0\",\"hum\": \"0\",\"co2\": \"0\",\"light\": \"0\"}";
-    // var stanId = findGetParameter('id');
+    // var stanId = stan;
     // $.get(
     //     "172.20.222.228:5000/getValue", {
     //         id: stanId
@@ -41,10 +44,10 @@ function getCurrentData() {
     // );
 }
 
-function disableDates() {
+function disableDates(stan) {
     $.get(
         "ucitajRezervacije.php", {
-            stan: findGetParameter('id')
+            stan: stan
         },
         function(data) {
             if(data == "error") {
@@ -94,4 +97,48 @@ $(document).ready(function() {
             }
         );
     });
+    $("#commentSubmit").click(function(){
+        $.get(
+            "obradiKomentare.php", {
+                operacija: "dodavanje",
+                stan: findGetParameter('id'),
+                tekst: $("#commentText").val()
+            },
+            function(data) {
+                if(data == "error") {
+                    alert('Došlo je do greške prilikom rezervacije.');
+                } else if(data == "success") {
+                    window.location.reload();
+                }
+            }
+        );
+    });
 });
+
+function ucitajKomentare(stanId) {
+    $.get(
+        "obradiKomentare.php", {
+            operacija: "ucitavanje",
+            stan: stanId
+        },
+        function(data) {
+            $("#komentari").html(data);
+        }
+    );
+}
+
+function obrisiKomentar(id) {
+    $.get(
+        "obradiKomentare.php", {
+            operacija: "brisanje",
+            id: id
+        },
+        function(data) {
+            if(data == "error") {
+                alert('Došlo je do greške prilikom brisanja komentara.');
+            } else if(data == "success") {
+                window.location.reload();
+            }
+        }
+    );
+}

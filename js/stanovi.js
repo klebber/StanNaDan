@@ -42,7 +42,16 @@ function getSuggestions() {
 }
 
 function ucitajStanove() {
-    //TODO prikazi ime izabrane ulice u search bar
+    if(findGetParameter('ulid') != null) {
+        $.get(
+            "ucitajUlicu.php", {
+                ulid: findGetParameter('ulid')
+            },
+            function(data) {
+                $("#searchquery").val(data);
+            }
+        );
+    }
     $.get(
         "ucitajStanove.php", {
             ulid: findGetParameter('ulid'),

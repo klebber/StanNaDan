@@ -20,7 +20,6 @@ if($tip != "") {
     }
     $where .= "tip = '$tip' ";
 }
-
 $upit = "SELECT id, naziv, opis, ulica, broj, tip FROM stan $where ORDER BY naziv";
 $rezultat = $mysqli->query($upit);
 if ($rezultat->num_rows == 0) {

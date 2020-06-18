@@ -36,8 +36,7 @@
             <div class="col-lg-9 mb-4">
                 <div class="search" id="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Unesite naziv ulice..." autocomplete="off" onkeyup="getSuggestions()" id="searchquery" 
-                        <?php if(isset($_GET["ulid"])) { ?> value="<?=$_SESSION['ulica']?>" <?php } ?>>
+                        <input type="text" class="form-control" placeholder="Unesite naziv ulice..." autocomplete="off" onkeyup="getSuggestions()" id="searchquery">
                         <?php if(isset($_GET["ulid"])) { ?>
                             <span class="input-group-btn">
                                 <button class="btn btn-danger" onclick="removeParam('ulid')" type="button">X</button>

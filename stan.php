@@ -78,6 +78,34 @@
 
         </div>
 
+        <hr>
+
+        <div class="card my-4">
+            <h5 class="card-header">Komentari</h5>
+            <div class="card-body">
+                <?php if($_SESSION['status'] == true) { ?>
+                    <div>
+                        <?php if(isset($_SESSION['temp'])) { ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?= $_SESSION['temp']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php } unset($_SESSION['temp']);?>
+                        <div class="form-group">
+                            <textarea id="commentText" class="form-control" rows="3" placeholder="Ostavite svoj komentar..."></textarea>
+                        </div>
+                        <button id="commentSubmit" type="submit" class="btn btn-primary">Pošalji</button>
+                    </div>
+                <?php } else {?>
+                    <p>Morate se ulogovati kako biste postavili komentar</p>
+                <?php } ?>
+            </div>
+        </div>
+        <div id="komentari"></div>
+    </div>
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <script src="js/bootstrap-datepicker.min.js"></script>
