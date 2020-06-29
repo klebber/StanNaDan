@@ -4,7 +4,7 @@ include 'init.php';
 include 'dbConnection.php';
 
 if($_SESSION['status'] == false || !isset($_GET['operacija'])) {
-    header("index.php");
+    header("Location: error.php");
     exit();
 }
 $operacija = $_GET['operacija'];

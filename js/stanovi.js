@@ -42,23 +42,47 @@ function getSuggestions() {
 }
 
 function ucitajStanove() {
-    if(findGetParameter('ulid') != null) {
-        $.get(
-            "ucitajUlicu.php", {
-                ulid: findGetParameter('ulid')
-            },
-            function(data) {
-                $("#searchquery").val(data);
-            }
-        );
-    }
     $.get(
         "ucitajStanove.php", {
             ulid: findGetParameter('ulid'),
             tip: findGetParameter('tip')
         },
         function(data) {
-            $("#grid").html(data);
+            if(data == "error") {
+                window.location.href="error.php";
+                return;
+            }
+            if(data == '[]') {
+                $("#grid").html(`<div class="alert alert-danger" role="alert">Ne postoje stanovi koji ispunjavaju kriterijume!</div>`);
+                return;
+            }
+            var stanovi = JSON.parse(data);
+            console.log(stanovi);
+            if(findGetParameter('ulid') != null) {
+                $("#searchquery").val((stanovi[0])[3]);
+            }
+            var grid = `
+                <div class="card-deck">
+            `;
+            for (var i = 0, len = stanovi.length; i < len; ++i) {
+                var stan = stanovi[i];
+                grid += `
+                    <div class="col-lg-6 col-sm-12 portfolio-item">
+                        <div class="card">
+                            <a href="stan.php?id=${stan[0]}"><img class="card-img-top stanovi-card-img" src="img/stanovi/${stan[0]}.jpg" alt=""></a>
+                            <div class="card-body">
+                                <a href="stan.php?id=${stan[0]}"><h5 class="card-title">${stan[1]}</h5></a>
+                                <p class="card-text">${stan[2]}</p>
+                                <p class="card-text"><small class="text-muted">Tip stana: ${stan[5]}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            grid += `
+                </div>
+            `;
+            $("#grid").html(grid);
         }
     );
 }

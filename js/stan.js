@@ -17,10 +17,11 @@ function ucitajPodatkeOStanu() {
                 return;
             }
             var obj = JSON.parse(data);
+            $("#nazivstana").html(obj.naziv + " - Stan Na Dan");
             $("#naziv").html(obj.naziv);
             $("#opis").html(obj.opis);
             $("#opis").html(obj.opis);
-            $("#lokacija").html("Ulica: " + obj.ulica + "<br/>Broj: " + obj.broj + "<br/>Tip: " + obj.tip + "<br/>Cena: " + obj.cena + " €/dan");
+            $("#lokacija").html("Ulica: " + obj.ulica + "<br/>Broj: " + obj.broj + "<br/>Tip: " + obj.tip + "<br/>Cena: " + obj.cena + " din/dan");
             $("#slika").attr("src", "img/stanovi/"+obj.id+".jpg");
         }
     );

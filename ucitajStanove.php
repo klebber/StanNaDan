@@ -3,41 +3,33 @@
 include 'init.php';
 include 'dbConnection.php';
 
-$ulid = $_GET['ulid'];
-$tip = $_GET['tip'];
-
 $where = "";
 
-if($ulid != "") {
-    $where = "WHERE ulica = '$ulid' ";
+if(isset($_GET['vlasnik'])) {
+    $vlasnik = $_SESSION['id'];
+    $where = "WHERE s.vlasnik = $vlasnik";
+}
+else {
+    $ulid = $_GET['ulid'];
+    $tip = $_GET['tip'];
+
+    if($ulid != "") {
+        $where = "WHERE s.ulica = '$ulid' ";
+        if($tip != "") {
+            $where .= "AND ";
+        }
+    }
     if($tip != "") {
-        $where .= "AND ";
+        if($where == "") {
+            $where = "WHERE ";
+        }
+        $where .= "s.tip = '$tip' ";
     }
 }
-if($tip != "") {
-    if($where == "") {
-        $where = "WHERE ";
-    }
-    $where .= "tip = '$tip' ";
-}
-$upit = "SELECT id, naziv, opis, ulica, broj, tip FROM stan $where ORDER BY naziv";
+$upit = "SELECT s.id as id, s.naziv as naziv, s.opis as opis, a.naziv as ulica, s.broj as broj, s.tip as tip, s.cena as cena FROM stan s LEFT JOIN adresa a on s.ulica = a.id $where ORDER BY s.naziv";
 $rezultat = $mysqli->query($upit);
-if ($rezultat->num_rows == 0) {
-    echo "<p>U bazi ne postoje stanovi koji ispunjavaju kriterijume!</p>";
+if ($rezultat == false) {
+    echo 'error';
     return;
 }
-?>
-<div class="card-deck"><?php
-    while ($red = $rezultat->fetch_object()) { ?>
-        <div class="col-lg-6 col-sm-12 portfolio-item">
-            <div class="card">
-                <a href="stan.php?id=<?=$red->id?>"><img class="card-img-top stanovi-card-img" src="img/stanovi/<?=$red->id?>.jpg" alt=""></a>
-                <div class="card-body">
-                    <a href="stan.php?id=<?=$red->id?>"><h5 class="card-title"><?=$red->naziv?></h5></a>
-                    <p class="card-text"><?=$red->opis?></p>
-                    <p class="card-text"><small class="text-muted">Tip stana: <?=$red->tip?></small></p>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
-</div>
+echo json_encode($rezultat->fetch_all());
