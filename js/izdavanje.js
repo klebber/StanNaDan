@@ -39,7 +39,7 @@ function ucitajIzdavanja() {
                             <td>${iz[4]}</td>
                             <td>${iz[5]}</td>
                             <td>${iz[6]} din</td>
-                            <td><button class='btn btn-primary' onclick='detaljiStana(${iz[0]})'>Detalji</button></td>
+                            <td><a class='btn btn-primary' href='detalji.php?id=${iz[0]}'>Detalji</a></td>
                             <td><button class='btn btn-primary' onclick='obrisiStan(${iz[0]})'>Obriši</button></td>
                         </tr>
                 `;

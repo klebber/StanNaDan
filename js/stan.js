@@ -4,8 +4,7 @@ function findGetParameter(parameterName) {
     return search_params.get(parameterName);
 }
 
-function ucitajPodatkeOStanu() {
-    var stan = findGetParameter('id');
+function ucitajPodatkeOStanu(stan) {
     $("#commentText").val("");
     $.get(
         "ucitajStan.php", {
@@ -17,7 +16,7 @@ function ucitajPodatkeOStanu() {
                 return;
             }
             var obj = JSON.parse(data);
-            $("#nazivstana").html(obj.naziv + " - Stan Na Dan");
+            $("#title").html(obj.naziv + " - Stan Na Dan");
             $("#naziv").html(obj.naziv);
             $("#opis").html(obj.opis);
             $("#opis").html(obj.opis);

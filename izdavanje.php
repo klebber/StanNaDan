@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+    include 'init.php';
+    if(!$_SESSION['status']) {
+        header("Location: error.php");
+    }
+?>
+
 <head>
 
   <meta charset="utf-8">

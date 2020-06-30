@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title id="nazivstana"></title>
+  <title id="title"></title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@
 
 </head>
 
-<body onload="ucitajPodatkeOStanu()">
+<body onload="ucitajPodatkeOStanu(<?= $_GET['id']; ?>)">
 
     <?php include 'header.php'; ?>
 
@@ -45,7 +45,7 @@
   
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div id="infoCard">
                     <div class="card mb-4">
                         <h5 class="card-header">Trenutne informacije</h5>

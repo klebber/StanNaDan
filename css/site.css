@@ -125,6 +125,17 @@ body {
   height: 400px;
 }
 
+#header-waves {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.kalkulator {
+  padding-bottom: 20px;
+}
+
 .stanovi-card-img {
   width: 100%;
   height: 250px;
