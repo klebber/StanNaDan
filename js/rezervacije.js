@@ -32,9 +32,11 @@ function ucitajRezervacije() {
                             <th scope="row">${i+1}</th>
                             <td>${rez[4]}</td>
                             <td>${rez[3]}</td>
-                            <td>${rez[5]} din</td>
-                            <td><button class='btn btn-primary' onclick='ponistiRezervaciju(${rez[0]})'>Poništi</button></td>
-                        </tr>
+                            <td>${rez[5]} din</td>`
+                            if(new Date(rez[3]) > new Date()) {
+                                tabela += "<td><button class='btn btn-primary' onclick='ponistiRezervaciju(${rez[0]})'>Poništi</button></td>";
+                            }
+            tabela += `</tr>
                 `;
             }
             tabela += `

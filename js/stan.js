@@ -32,7 +32,6 @@ function ucitajPodatkeOStanu(stan, korisnik) {
 }
 
 function getCurrentData(stan) {
-    var data = "{\"temp\": \"0\",\"hum\": \"0\",\"co2\": \"0\",\"light\": \"0\"}";
     // var stanId = stan;
     // $.get(
     //     "172.20.222.228:5000/getValue", {
@@ -40,8 +39,8 @@ function getCurrentData(stan) {
     //     },
     //     function(data) {
            $("#infoCard").css("display", "block");
-           var json = JSON.parse(data);
-           $("#informacije").html("Temperatura: " + json.temp + "<br>Vlaznost vazduha: " + json.hum + "<br>Nivo CO2: " + json.co2 + "<br>Osvetljenost: " + json.light);
+           //var json = JSON.parse(data);
+           $("#informacije").html("Temperatura: " + '26°C' + "<br>Vlaznost vazduha: " + '40%' + "<br>Nivo CO2: " + 'Normalan nivo' + "<br>Osvetljenost: " + 'Svetlo');
     //     }
     // );
 }
