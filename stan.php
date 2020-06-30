@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php
+    require 'init.php';
     if(!isset($_GET['id'])) {
         header("Location: error.php");
     }
@@ -21,9 +22,9 @@
 
 </head>
 
-<body onload="ucitajPodatkeOStanu(<?= $_GET['id']; ?>)">
+<body onload="ucitajPodatkeOStanu(<?= $_GET['id'] ?>, <?= $_SESSION['id'] ?>)">
 
-    <?php include 'header.php'; ?>
+    <?php $page = 'stanovi'; include 'header.php'; ?>
 
     <div class="container page-content">
 

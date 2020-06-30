@@ -4,7 +4,7 @@ function findGetParameter(parameterName) {
     return search_params.get(parameterName);
 }
 
-function ucitajPodatkeOStanu(stan) {
+function ucitajPodatkeOStanu(stan, korisnik) {
     $("#commentText").val("");
     $.get(
         "ucitajStan.php", {
@@ -16,6 +16,8 @@ function ucitajPodatkeOStanu(stan) {
                 return;
             }
             var obj = JSON.parse(data);
+            var vlasnik = obj.vlasnik;
+            if(vlasnik == korisnik) $("#rezervacijaCard").css("display", "none");
             $("#title").html(obj.naziv + " - Stan Na Dan");
             $("#naziv").html(obj.naziv);
             $("#opis").html(obj.opis);

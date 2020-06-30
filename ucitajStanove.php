@@ -9,7 +9,7 @@ if(isset($_GET['vlasnik'])) {
     $vlasnik = $_SESSION['id'];
     $where = "WHERE s.vlasnik = $vlasnik";
 }
-else {
+else if (isset($_GET['ulid']) || isset($_GET['tip'])) {
     $ulid = $_GET['ulid'];
     $tip = $_GET['tip'];
 

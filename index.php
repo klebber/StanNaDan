@@ -18,7 +18,7 @@
 
 <body>
 
-  <?php include 'header.php'; ?>
+  <?php $page = 'pocetna'; include 'header.php'; ?>
 
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

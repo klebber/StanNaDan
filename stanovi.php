@@ -17,7 +17,7 @@
 
 <body onload="ucitajStanove()">
 
-    <?php include 'header.php'; ?>
+    <?php $page = 'stanovi'; include 'header.php'; ?>
 
     <div class="container page-content">
         <div class="row">

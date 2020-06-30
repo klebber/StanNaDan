@@ -24,7 +24,7 @@
 
 <body onload="ucitajIzdavanja()">
 
-    <?php include 'header.php'; ?>
+    <?php $page = 'izdavanje'; include 'header.php'; ?>
     
 
     <div class="container page-content">

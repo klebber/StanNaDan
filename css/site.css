@@ -9,6 +9,9 @@ body {
 .btn-primary {
   border-color: #343a40;
   background-color: #4d545c;
+  cursor: pointer;
+  color: white !important;
+  margin: 2px;
 }
 
 .btn-primary:hover {
@@ -163,6 +166,14 @@ body {
 
 .card {
   height: 100%;
+}
+
+#grafici {
+  margin-top: 20px;
+}
+
+.grafik {
+  width: 100%;
 }
 
 @media (max-width: 767.98px) {

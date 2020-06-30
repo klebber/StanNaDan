@@ -23,7 +23,7 @@
 
 <body onload="ucitajPodatkeOStanu(<?= $_GET['id']; ?>)">
 
-    <?php include 'header.php'; ?>
+    <?php $page = 'izdavanje'; include 'header.php'; ?>
 
     <div class="container page-content">
         <h1><div id="naziv"></div></h1>

@@ -30,7 +30,7 @@
         </button>
       </div>
       <?php } unset($_SESSION['temp']);?>
-      <form class="form" id="login_form" name="login_form" method="post" enctype="multipart/form-data" action="obradaDodavanjeStana.php">
+      <form class="form" id="dodavanje_form" name="dodavanje_form" method="post" enctype="multipart/form-data" action="obradaDodavanjeStana.php">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">

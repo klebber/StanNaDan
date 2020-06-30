@@ -17,7 +17,7 @@
 
 <body onload="ucitajRezervacije()">
 
-    <?php include 'header.php'; ?>
+    <?php $page = 'rezervacije'; include 'header.php'; ?>
     
 
     <div class="container page-content">
